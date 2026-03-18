@@ -6,7 +6,7 @@ import { TodoList } from './components/TodoList';
 import { FormEvent, useState } from 'react';
 
 const findUserById = (userId: number) => {
-  return usersFromServer.find(u => u.id === userId);
+  return usersFromServer.find(user => user.id === userId);
 };
 
 export const App = () => {
@@ -58,8 +58,8 @@ export const App = () => {
     setError(false);
   };
 
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmitHandler = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     if (!title || !chosenUser) {
       setError(true);
